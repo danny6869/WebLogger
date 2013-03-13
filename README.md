@@ -14,9 +14,9 @@ devices to a website, blog, or just about any internet location.  It is highly
 customizeable, but provides many useful templates out of the box.
 
 Because WebLogger can be setup do communicate song information in a variety of
-ways, it can be a bit overwhelming to configure the first time.  If you have
-any problems with that, feel free to email me (Danny Rego) at
-danny@rego.com.  I'll help out the best I can.
+ways, it can be a bit overwhelming to configure for the first time.  If you
+have any problems, feel free to email me (Danny Rego) at danny@rego.com.  I'll
+help out the best I can.
 
 
 ## Installation

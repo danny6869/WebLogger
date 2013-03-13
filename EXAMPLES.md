@@ -7,6 +7,7 @@ be incorperated into your website via a server-side include (or similar setup).
 The main goal of these sample scripts is to show you how to receive the data
 on the server end.
 
+
 ## Example #1
 ### Multipart POST
 
@@ -133,7 +134,6 @@ user-friendly formatted text.
 	print $q->header('text/html');
 	print "OK Song information published.\n";
 	exit;
-
 
 
 ## Example #3

@@ -33,6 +33,10 @@ danny@rego.com.  I'll help out the best I can.
 
 ...you're done.
 
+## Examples & Helper Scripts
+
+See EXAMPLES.md for more advanced methods of having WebLogger post information to your web site, or blog.
+
 ## Help
 
 If you have any problems, comments, or suggestions, please email danny@rego.com to let me know!

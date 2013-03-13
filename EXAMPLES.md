@@ -8,6 +8,7 @@ The main goal of these sample scripts is to show you how to receive the data
 on the server end.
 
 ## Example #1
+### Multipart POST
 
 This script waits for web logger to connect to it, and will accept
 multipart/form-data, which is what web logger sends when it is set to use the
@@ -70,6 +71,7 @@ displayed, and FTP is not an option.
 
 
 ## Example #2
+### Multipart POST of XML
 
 This script is the same as Example #1, except it receives a file in XML
 format.  All settings in web logger would be the same as in Example #1, except
@@ -135,6 +137,7 @@ user-friendly formatted text.
 
 
 ## Example #3
+### Plain old GET/POST (without album art)
 
 This script simply awaits a GET, or POST of the song information, and writes
 our nicely formatted text file.  (Note: a GET, or non-multipart POST CANNOT

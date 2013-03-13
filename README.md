@@ -15,7 +15,7 @@ customizeable, but provides many useful templates out of the box.
 
 Because WebLogger can be setup do communicate song information in a variety of
 ways, it can be a bit overwhelming to configure for the first time.  If you
-have any problems, feel free to email me (Danny Rego) at danny@rego.com.  I'll
+have any problems, feel free to email me (Danny Rego) at <danny@rego.com>.  I'll
 help out the best I can.
 
 
@@ -39,4 +39,4 @@ See EXAMPLES.md for more advanced methods of having WebLogger post information t
 
 ## Help
 
-If you have any problems, comments, or suggestions, please email danny@rego.com to let me know!
+If you have any problems, comments, or suggestions, please email <danny@rego.com> to let me know!

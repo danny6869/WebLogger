@@ -1,0 +1,14 @@
+<html>
+<HEAD>
+<TITLE>Template Viewer - [% template_name %]</TITLE>
+<LINK REL="stylesheet" HREF="/slimserver.css" TYPE="text/css">
+
+</HEAD>
+<body>
+[% IF status=='OK' %]
+	<div style="color: 00FF00; font-weight: bolder;">[% status_message %]</div>
+[% ELSE %]
+	<div style="color: FF0000; font-weight: bolder;">ERROR: [% status_message %]</div>
+[% END %]
+</body>
+</html>

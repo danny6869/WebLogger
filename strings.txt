@@ -1,0 +1,277 @@
+# For display in the squeezebox's UI...
+PLUGIN_WEBLOGGER_UI_TITLE
+	EN	WebLogger
+PLUGIN_WEBLOGGER_UI_TITLE_ERROR
+	EN	WebLogger Error
+
+SETUP_UI_WEBLOGGER_STATUS
+	EN	Status
+SETUP_UI_WEBLOGGER_ENABLED
+	EN	Enabled (automatic)
+SETUP_UI_WEBLOGGER_DISABLED
+	EN	Disabled (manual)
+SETUP_UI_WEBLOGGER_ABOUT
+	EN	About WebLogger
+SETUP_UI_WEBLOGGER_ABOUT_INFO
+	EN	Written By: Danny Rego (danny@rego.com - http://weblogger.regoroad.com)
+SETUP_UI_WEBLOGGER_MANUAL_UPDATE
+	EN	Press PLAY to update manually.
+SETUP_UI_WEBLOGGER_LAST_UPDATE
+	EN	Last Successful Update
+
+# Plugin name/title...
+PLUGIN_WEBLOGGER_TITLE
+	EN	WebLogger
+PLUGIN_WEBLOGGER_DESC
+	EN	This plugin allows your blog or website to display what your are listening to on your squeezebox player.<br><br>Once configured, basic functionality can becontrolled easily through the WebLogger menu in the Plugins section on yourdevice(s).<br><br><b>Note: If you would like to use WebLogger with more than one player, each player must be configured seperately.  (make sure the device you want to configure is powered up)</b>
+
+# For Status setting...
+SETUP_WEBLOGGER_STATUS
+	EN	WebLogger Status
+SETUP_WEBLOGGER_STATUS_DESC
+	EN	Choose whether you'd like WebLogger to perform automatic updates everytime a new song is played, or manual updates only.
+SETUP_WEBLOGGER_STATUS_OPTION_ENABLED
+	EN	Enabled (automatic)
+SETUP_WEBLOGGER_STATUS_OPTION_DISABLED
+	EN	Disabled (manual update only)
+
+# For a manual update from the web interface...
+SETUP_WEBLOGGER_MANUAL_UPDATE
+	EN	Manual Update
+SETUP_WEBLOGGER_MANUAL_UPDATE_DESC
+	EN	Link to allow for a manual update at any time
+SETUP_WEBLOGGER_MANUAL_UPDATE_LINK_TEXT
+	EN	Click here to force a MANUAL update NOW
+
+# For items to log setting(s)...
+SETUP_GROUP_WEBLOGGER_LOG
+	EN	Information to Log
+SETUP_GROUP_WEBLOGGER_LOG_DESC
+	EN	These settings are what WebLogger includes when doing an update.  If an item is set to <b><i>not</i></b> be included in the update, then WebLogger completely ignores that item, even when figuring out if an update is required.  (see note)<br><br><b>Note: If you turn off log items that are <i>not required</i> for your update, you can cut down on the number of updates WebLogger performs.  For example, disabling the song title from being logged, will make it so that if you listen to a whole album, only <i>one update</i> is required (since the information will not change until a new album/artist is played).</b>
+SETUP_WEBLOGGER_LOG_OPTION_ENABLED
+	EN	Log
+SETUP_WEBLOGGER_LOG_OPTION_DISABLED
+	EN	Do not Log
+SETUP_WEBLOGGER_LOG_TRACKNUM
+	EN	Track Number
+SETUP_WEBLOGGER_LOG_TITLE
+	EN	Title
+SETUP_WEBLOGGER_LOG_DURATION
+	EN	Duration
+SETUP_WEBLOGGER_LOG_COMPOSER
+	EN	Composer
+SETUP_WEBLOGGER_LOG_ALBUM
+	EN	Album
+SETUP_WEBLOGGER_LOG_GENRE
+	EN	Genre
+SETUP_WEBLOGGER_LOG_YEAR
+	EN	Year
+SETUP_WEBLOGGER_LOG_ARTIST
+	EN	Artist
+SETUP_WEBLOGGER_LOG_CONDUCTOR
+	EN	Conductor
+SETUP_WEBLOGGER_LOG_BITRATE
+	EN	Bitrate
+SETUP_WEBLOGGER_LOG_COMMENT
+	EN	Comment
+SETUP_WEBLOGGER_LOG_TAGVERSION
+	EN	Tag Version
+SETUP_WEBLOGGER_LOG_TIMESTAMP
+	EN	Timestamp
+SETUP_WEBLOGGER_LOG_ALBUMART
+	EN	Album Art
+SETUP_WEBLOGGER_LOG_PLAYERNAME
+	EN	Player Name
+SETUP_WEBLOGGER_LOG_WEBLOGGERVERSION
+	EN	WebLogger Version
+
+SETUP_GROUP_WEBLOGGER_UPDATE_SERVER
+	EN	Update Server Configuration
+SETUP_GROUP_WEBLOGGER_UPDATE_SERVER_DESC
+	EN	WebLogger can be configured to update your website/webpage in a number of ways.  This section describes the various ways for you to get the song information from your Squeezebox (or other device) to your website.
+SETUP_WEBLOGGER_STORAGE_URL
+	EN	Storage URL
+SETUP_WEBLOGGER_STORAGE_URL_DESC
+	EN	The first (and most important) setting is the storage URL.  This setting tells WebLogger where it will be storing the song information, whether it be an FTP site, a local directory/folder, or through an CGI script running on a web server somewhere.  Described in the section below are each of the valid URL types that can be entered, and a short description of their use.<br><br><b>file://c:\</b>(windows style file path)<br>or<br><b>file:///home/username/</b> (linux/*nix style file path)<br><br>Specifying a FILE:// type URL will write the output file(s) to a local location.  Any directory/folder that is valid on the computer that slimserver runs from can be specified here.<br><br><b>http://www.myhosting.com/cgi-bin/myscript.cgi?anyvar=anyvalue</b><br>or<br><b>https://www.myhosting.com/cgi-bin/myscript.cgi?anyvar=anyvalue</b> (secure script)<br><br>If you would like to create your own CGI script to deal with the information WebLogger sends in an update, then set the URL up to be the location of where your CGI script currently resides.  You may include any additional parameters you wish, as long as they don't clash with the vars that WebLogger inherently generates (see HTTP Configuration).<br><br><b>Note: Please see the "HTTP Configuration" section for more detailed information on setting up your HTTP request.  (and receiving)</b><br><br><b>ftp://username:password@www.my-hosting-ftp-server.com/wherever/</b><br><br>With FTP you can send files to your website, including album art, and HTML/XML.  FTP is directly supported by just about every hosting provider out there, and it's fairly straight-forward to use.  The file(s) written to the FTP site will be in the format specified in the "output configuration" section of this page.<br><br>The only drawback of using FTP for updating your site/page is that it is slower by nature because it has to connect, and authenticate/re-authenticate everytime WebLogger goes to update.  Speed can be helped by using the "keep alive" flag described in the "FTP Configuration" section.<br><br><b>Note: when using an FTP type URL, you MUST supply the username and password that you use to connect to that server.  If you have previously entered a username, and password for use with FTP, it is NOT shown here for security purposes.</b>
+SETUP_WEBLOGGER_STORAGE_URL_HIDDEN_PASSWORD_TEXT
+	EN	password hidden for username
+
+SETUP_WEBLOGGER_UPDATE_TIMEOUT
+	EN	Timeout
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_DESC
+	EN	The timeout setting tells WebLogger what the maximum amount of time is that it can take to update the song information.  If this time is exceeded, the song information is not sent.  If you notice a long pause between songs, you may want to reduce this number.  Also updating via FTP is MUCH slower than HTTP, so if at all possible, use HTTP, or FILE for best performance.<br><br>If the update takes longer than the specified time, the update will fail, and an error will be displayed for 3 seconds to let you know.
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_1
+	EN	1 second
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_2
+	EN	2 seconds
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_5
+	EN	5 seconds
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_10
+	EN	10 seconds
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_15
+	EN	15 seconds
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_30
+	EN	30 seconds
+SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_60
+	EN	60 seconds
+
+SETUP_GROUP_WEBLOGGER_OUTPUT_FILE
+	EN	Output File Configuration
+SETUP_GROUP_WEBLOGGER_OUTPUT_FILE_DESC
+	EN	If WebLogger is to output song information to a file at the specified storage location, then here, you can specify the type of file to output.<br><br><b>Note: You may skip this section entirely if you will not be outputting a file.  (using HTTP GET, or HTTP POST for example)</b>
+
+SETUP_WEBLOGGER_OUTPUT_PLAYING_TEMPLATE
+	EN	Output Template (playing)
+SETUP_WEBLOGGER_OUTPUT_PLAYING_TEMPLATE_DESC
+	EN	WebLogger can be configured to output files that are generated from the templates listed below.  To create a new template, just add the new file (or copy one of the existing ones) to the "Plugins/WebLogger/html/templates" directory/folder, making sure to give it an extension of ".template".  Any files that are in that directory with ".template" in the name are displayed in this list, and selectable as output files.<br><br><b>Note: Template files are processed using slim server's internal template system.  To see the basics of templates including how to substitute song information inside your template, please click the "preview" link beside any of the listed templates.  If you would like to learn more about slim server's templating system, see slim server's documentation technical documentation.  Most useful functionality can be learned by examining the templates above however.</b><br><br><b>Note: To preview a template, click the name of the template below.</b>
+
+SETUP_WEBLOGGER_OUTPUT_FILENAME
+	EN	Output Filename
+SETUP_WEBLOGGER_OUTPUT_FILENAME_DESC
+	EN	This setting specifies what the name of the file should be when writing it to the destination.
+
+SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED
+	EN	Stopped Template
+SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED_DESC
+	EN	WebLogger can be set to output a special "stopped" template file when playback is stopped, or the player is powered down.
+SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED_OPTION_ENABLED
+	EN	Enabled
+SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED_OPTION_DISABLED
+	EN	Disabled
+
+SETUP_WEBLOGGER_OUTPUT_STOPPED_TEMPLATE
+	EN	Output Template (stopped)
+SETUP_WEBLOGGER_OUTPUT_STOPPED_TEMPLATE_DESC
+	EN	WebLogger can be configured to output files that are generated from the templates listed below when no song is playing.  To create a new template, just add the new file (or copy one of the existing ones) to the "/html/WebLogger/templates/stopped" directory/folder, making sure to give it an extension of ".template".  Any files that are in that directory with ".template" in the name are displayed in this list, and selectable as output files.<br><br><b>Note: Template files are processed using slim server's internal template system.  To see the basics of templates including how to substitute song information inside your template, please click the template name for a preview.  If you would like to learn more about slim server's templating system, see slim server's technical documentation.  Most useful functionality can be learned by examining the existing templates.</b><br><br><b>Note: To preview a template, click the name of the template below.</b>
+
+SETUP_GROUP_WEBLOGGER_HTTP
+	EN	HTTP Configuration
+SETUP_GROUP_WEBLOGGER_HTTP_DESC
+	EN	When the storage URL is an HTTP:// or HTTPS:// type location, these settings are used to setup how the HTTP (cgi) update is to be performed.<br><br><b>Note: This section does not apply to file:// or ftp:// type URLs, so you may ignore this section completely if you are using either of those update methods.</b><br><br><b>Note: See helper scripts for examples of receiving/retrieving data sent by WebLogger to your CGI script.</b>
+
+SETUP_WEBLOGGER_HTTP_METHOD
+	EN	HTTP Method
+SETUP_WEBLOGGER_HTTP_METHOD_DESC
+	EN	The HTTP method, tells WebLogger how to transmit the song information to the receiving CGI script.<br><br>The GET method will force WebLogger to send all song information as parameters passed within the URL <i>(example: http://mysite/myscript?TITLE=Everlong&ARTIST=Foo Fighters)</i>.  The parameters will have the names of "TITLE", "ARTIST", "ALBUM" and "TIMESTAMP" (depending on what's selected in the "Information to Log" setting).<br><br>The POST method allows WebLogger to send all song information as parameters passed within the header of the HTTP request.  The parameters will have the names of "TITLE", "ARTIST", "ALBUM" and "TIMESTAMP" (depending on what's selected in the "Information to Log" setting).<br><br><b>Note: Both the GET and POST methods CANNOT transmit files within the requests, so in those cases ALBUM ART will not be sent with the song data parameters.  If you would like to send album art as well via HTTP, use the "post as file" option described below.</b><br><br>Use the "Post as File" option to have WebLogger send all song information as file(s) in the format specified by the "Format" setting (below).  The song information file is sent in the request as part of a multipart/form-data request.  Additionally, if WebLogger has been configured to send the album art graphic as well, then that file will also be included.<br><br>To access the files from within your receiving CGI script, simply retrieve the data that has the same name as what you have specified in the "output filename", and/or "album art filename" settings.  <i>(ie. songinfo.txt and/or albumart.jpg)</i>
+SETUP_WEBLOGGER_HTTP_METHOD_OPTION_GET
+	EN	Get
+SETUP_WEBLOGGER_HTTP_METHOD_OPTION_POST
+	EN	Post
+SETUP_WEBLOGGER_HTTP_METHOD_OPTION_MULTIPARTPOST
+	EN	Post as "file" (multipart post)
+
+SETUP_WEBLOGGER_HTTP_CHECKFOROK
+	EN	Get/Post check for "OK"
+SETUP_WEBLOGGER_HTTP_CHECKFOROK_DESC
+	EN	WebLogger has the ability to check for success, or error messages that are returned from your receiving CGI scripts.  When enabled, WebLogger will check the results of what's returned by your CGI for "OK" as the first two characters.  If OK is not found as the first two characters, then an error is shown on your Squeezebox (or other device), using the text that was returned.
+SETUP_WEBLOGGER_HTTP_CHECKFOROK_OPTION_ENABLED
+	EN	Enabled
+SETUP_WEBLOGGER_HTTP_CHECKFOROK_OPTION_DISABLED
+	EN	Disabled
+
+SETUP_GROUP_WEBLOGGER_FTP
+	EN	FTP Configuration
+SETUP_GROUP_WEBLOGGER_FTP_DESC
+	EN	If you are using an FTP:// type storage location, configure these settings so WebLogger can communicate properly with the FTP server.<br><br><b>Note: You may skip this section completely if you are not using an FTP:// type storage location.</b>
+SETUP_WEBLOGGER_FTP_PASSIVE
+	EN	Passive Mode
+SETUP_WEBLOGGER_FTP_PASSIVE_DESC
+	EN	WebLogger can be configured to work with PASSIVE ftp servers.  Some ISPs/FTP sites require passive mode, so if you are having problems connecting, try enabling passive mode here.
+SETUP_WEBLOGGER_FTP_PASSIVE_OPTION_ENABLED
+	EN	Enabled
+SETUP_WEBLOGGER_FTP_PASSIVE_OPTION_DISABLED
+	EN	Disabled
+
+SETUP_WEBLOGGER_FTP_KEEPALIVE
+	EN	FTP Keep Alive
+SETUP_WEBLOGGER_FTP_KEEPALIVE_DESC
+	EN	When using FTP for transferring, the send procedure can be sped up by keeping your FTP session alive.  Also, some ISPs do not allow you to just keep your FTP session open, so they demand that you actually transfer useful data back and forth, or they automatically sever your connection after a few minutes.  All of the "keep alive" types you can select here will keep the session open, meaning that WebLogger will NOT actively logout between updates.  While this may seem wasteful, it actually greatly improves the speed that updates happen since it does not have to authenticate with every update (since the session is still open, and alive).<br><br>While some ISPs allow you to just keep your session open for as long as you wish, most will require you to actually transmit data to and/or from the server.  WebLogger can be configured to transfer "idle" commands to the server such as "PWD" and "NOOP", but again many ISPs have servers that are clever enough to see through this type of activity, and they will close the connection every few minutes anyways.<br><br>The best method of keeping the session active is to upload, or download a small file regularly so that the server sees REAL activity.  You can configure WebLogger to send, or receive a small dummy file, or even download the song information file (which is usuallyquite small) that WebLogger has written.<br><br><b>Note: WebLogger will perform the selected action at random intervals between 15, and 60 seconds.</b>
+SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_DISABLED
+	EN	Disabled
+SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_JUSTOPEN
+	EN	Keep Connection Open
+SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_UPLOADDUMMY
+	EN	Upload Dummy File
+SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_DOWNLOADDUMMY
+	EN	Download Dummy File
+SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_DOWNLOADSONGINFO
+	EN	Download Song Information File
+SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_COMMANDS
+	EN	Send Random Idle Commands
+SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_ANY
+	EN	Random Method Everytime
+
+SETUP_WEBLOGGER_FTP_DUMMYFILE
+	EN	Dummy File Filename
+SETUP_WEBLOGGER_FTP_DUMMYFILE_DESC
+	EN	When uploading, or downloading a dummy file is used as your "keep alive" method, you can specify a filename to use here.  It must be in the same directory as specified in the FTP:// storage location (ie. where songinfo.txt is placed).<br><br><b>Note: If you are not sure what to input, or you will not be using a dummy file, then you can skip this setting.</b>
+
+SETUP_GROUP_WEBLOGGER_ALBUMART
+	EN	Album Art
+SETUP_GROUP_WEBLOGGER_ALBUMART_DESC
+	EN	You may configure what type of album art is to be sent with each update.<br><br><b>Note: You may skip this section completely if you have configured WebLogger to <i>not</i> include album art.</b>
+SETUP_WEBLOGGER_ALBUMART_TYPE
+	EN	Album Art Type
+SETUP_WEBLOGGER_ALBUMART_TYPE_DESC
+	EN	The album art can be sent as a THUMBNAIL graphic, or a full-sized COVER.  These types can be configured from within slim server's configuration pages, and WebLogger will pull these graphics from where you have configured in slim server.
+SETUP_WEBLOGGER_ALBUMART_TYPE_OPTION_THUMB
+	EN	Thumbnail
+SETUP_WEBLOGGER_ALBUMART_TYPE_OPTION_COVER
+	EN	Full Cover Art
+
+SETUP_WEBLOGGER_ALBUMART_ALWAYS
+	EN	Force Album Art
+SETUP_WEBLOGGER_ALBUMART_ALWAYS_DESC
+	EN	When no album art is available for a particular song, WebLogger can be configured to upload a placholder graphic in it's place.
+SETUP_WEBLOGGER_ALBUMART_ALWAYS_OPTION_ENABLED
+	EN	Yes (upload placeholder when no art)
+SETUP_WEBLOGGER_ALBUMART_ALWAYS_OPTION_DISABLED
+	EN	No
+
+SETUP_WEBLOGGER_ALBUMART_FILENAME
+	EN	Album Art Filename
+SETUP_WEBLOGGER_ALBUMART_FILENAME_DESC
+	EN	The album art filename tells WebLogger what to store the album art graphic file as when it is sent as part of an update.  Please note that you must make sure this extension (.GIF, or .JPG) matches the type of album art you have stored on your server or some browsers/software may get confused.
+SETUP_WEBLOGGER_ALBUMART_FILENAME_PREFIX
+	EN	Album Art Filename Prefix
+SETUP_WEBLOGGER_ALBUMART_FILENAME_PREFIX_DESC
+	EN	Some websites are designed so that you cannot link to a file via a relative path like "albumart.jpg", which means you would have to link to it using it's full path such as "http://mywebsite.com/albumart.jpg" or "/albumart.jpg".  You may acheive this by adding a prefix for the album art filename here.<br><br><b>Note: Remember that when WebLogger links to the graphic, it will automatically add the album art filename to this prefix, so you DO NOT need to enter the filename here...just the prefix.</b>
+
+SETUP_GROUP_WEBLOGGER_STATUS
+	EN	Status Message Configuration
+SETUP_GROUP_WEBLOGGER_STATUS_DESC
+	EN	WebLogger can be configured to display messages on the player's screen during updates.<br><br><b>Note: If you are experiencing gaps or pops during playback when WebLogger performs an update, try turning message display OFF.</b>
+SETUP_WEBLOGGER_STATUS_DISPLAY
+	EN	Status Message Display
+SETUP_WEBLOGGER_STATUS_DISPLAY_DESC
+	EN	Select the types of status messages you would like WebLogger to communicate to you on the player's display.
+SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_NONE
+	EN	No status messages
+SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_SUCCESS
+	EN	Success/progress only
+SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_FAILURE
+	EN	Errors/failures only
+SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_ALL
+	EN	All
+
+SETUP_WEBLOGGER_STATUS_DISPLAY_TIME
+	EN	Status Message Display Time
+SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_DESC
+	EN	Select the length of time status messages should be shown on the player's display for.
+SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_1
+	EN	1 second
+SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_2
+	EN	2 seconds
+SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_5
+	EN	5 seconds
+SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_10
+	EN	10 seconds
+
+# An end message displaying more helpful info/links...
+SETUP_WEBLOGGER_CONFIG_FOOTNOTE
+	EN	Configuration Footnote
+SETUP_WEBLOGGER_CONFIG_FOOTNOTE_DESC
+	EN	<i>If you have any questions, problems, or suggestions regarding WebLogger, please email Danny Rego at <a href="mailto:danny@rego.com">danny@rego.com</a>.<br><br>Visit <a href="http://weblogger.regoroad.com" target="_blank">http://weblogger.regoroad.com</a> to keep up with the latest version.</i>
+
+
+

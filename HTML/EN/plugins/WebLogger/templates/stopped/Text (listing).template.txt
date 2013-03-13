@@ -1,0 +1,5 @@
+Status: Player Stopped
+[% IF SONG.TIMESTAMP %]Last Updated: [% SONG.TIMESTAMP %]
+[% END %][% IF SONG.PLAYERNAME %]Played on: [% SONG.PLAYERNAME %]
+[% END %][% IF SONG.WEBLOGGERVERSION %]Logged using: [% SONG.WEBLOGGERVERSION %]
+[% END %]

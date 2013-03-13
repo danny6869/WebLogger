@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<extension>
+	<id>e8d4d11b-7412-44b5-8e47-43ce4af1a8da</id>
+        <name>PLUGIN_WEBLOGGER_TITLE</name>
+        <module>Plugins::WebLogger::Plugin</module>
+        <version>1.11</version>
+        <description>PLUGIN_WEBLOGGER_DESC</description>
+        <creator>Danny Rego</creator>
+        <email>danny@rego.com</email>
+
+	<defaultState>enabled</defaultState>
+
+        <homepageURL>http://weblogger.regoroad.com</homepageURL>
+	<!-- optionsURL>plugins/WebLogger/settings/basic.html</optionsURL -->
+	<type>2</type><!-- type=extension -->
+
+        <targetApplication>
+  	        <id>SqueezeCenter</id>
+                <minVersion>7.6a</minVersion>
+                <maxVersion>7.9+</maxVersion>
+        </targetApplication>
+
+</extension>

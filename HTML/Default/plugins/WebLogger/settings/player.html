@@ -1,0 +1,321 @@
+[% PROCESS settings/header.html %]
+
+	[% WRAPPER setting title="PLUGIN_WEBLOGGER_TITLE" desc="" %]
+		<div class="prefDesc">[% "PLUGIN_WEBLOGGER_DESC" | string %]</div>
+	[% END %]
+
+	[% WRAPPER settingSection %]
+
+		[% WRAPPER settingGroup title="SETUP_WEBLOGGER_STATUS" desc="SETUP_WEBLOGGER_STATUS_DESC" %]
+			<select class="stdedit" name="weblogger_status" id="weblogger_status">
+				<option value="0" [% IF prefs.weblogger_status == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_OPTION_DISABLED" | string %]</option>
+				<option value="1" [% IF prefs.weblogger_status == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_OPTION_ENABLED" | string %]</option>
+			</select>
+		[% END %]
+
+		[% WRAPPER settingGroup title="SETUP_WEBLOGGER_MANUAL_UPDATE" desc="" %]
+			<a href="/plugins/WebLogger/manual_update.html?template_name=[% template_name | uri %]&player=[% playerURI %]"
+			target="manualUpdateMessage"
+			onClick="document.getElementById('manualUpdateMessage').style.display='block';">[% "SETUP_WEBLOGGER_MANUAL_UPDATE_LINK_TEXT" | string %]</a>
+			<!-- Using javascript and an iFrame here, because I'm too lazy to do anything better/cooler... -->
+			<iframe name="manualUpdateMessage" src="" width="100%" height="32" frameborder="0" scrolling="no" style="display: none;"></iframe>
+		[% END %]
+
+		[% WRAPPER settingGroup title="SETUP_GROUP_WEBLOGGER_LOG" desc="" %]
+			<div class="prefDesc">[% "SETUP_GROUP_WEBLOGGER_LOG_DESC" | string %]</div><br>
+			<table><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_TRACKNUM" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_tracknum" id="weblogger_log_tracknum">
+						<option value="0" [% IF prefs.weblogger_log_tracknum == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_tracknum == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_TITLE" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_title" id="weblogger_log_title">
+						<option value="0" [% IF prefs.weblogger_log_title == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_title == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_DURATION" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_duration" id="weblogger_log_duration">
+						<option value="0" [% IF prefs.weblogger_log_duration == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_duration == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_COMPOSER" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_composer" id="weblogger_log_composer">
+						<option value="0" [% IF prefs.weblogger_log_composer == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_composer == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_ALBUM" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_album" id="weblogger_log_album">
+						<option value="0" [% IF prefs.weblogger_log_album == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_album == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_GENRE" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_genre" id="weblogger_log_genre">
+						<option value="0" [% IF prefs.weblogger_log_genre == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_genre == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_YEAR" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_year" id="weblogger_log_year">
+						<option value="0" [% IF prefs.weblogger_log_year == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_year == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_ARTIST" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_artist" id="weblogger_log_artist">
+						<option value="0" [% IF prefs.weblogger_log_artist == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_artist == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_CONDUCTOR" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_conductor" id="weblogger_log_conductor">
+						<option value="0" [% IF prefs.weblogger_log_conductor == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_conductor == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_BITRATE" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_bitrate" id="weblogger_log_bitrate">
+						<option value="0" [% IF prefs.weblogger_log_bitrate == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_bitrate == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_COMMENT" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_comment" id="weblogger_log_comment">
+						<option value="0" [% IF prefs.weblogger_log_comment == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_comment == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_TAGVERSION" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_tagversion" id="weblogger_log_tagversion">
+						<option value="0" [% IF prefs.weblogger_log_tagversion == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_tagversion == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_TIMESTAMP" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_timestamp" id="weblogger_log_timestamp">
+						<option value="0" [% IF prefs.weblogger_log_timestamp == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_timestamp == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_ALBUMART" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_albumart" id="weblogger_log_albumart">
+						<option value="0" [% IF prefs.weblogger_log_albumart == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_albumart == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_PLAYERNAME" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_playername" id="weblogger_log_playername">
+						<option value="0" [% IF prefs.weblogger_log_playername == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_playername == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td valign="bottom" class="stdlabel">[% "SETUP_WEBLOGGER_LOG_WEBLOGGERVERSION" | string %]&nbsp;</td>
+				<td class="stdlabel">
+					<select class="stdedit" name="weblogger_log_webloggerversion" id="weblogger_log_webloggerversion">
+						<option value="0" [% IF prefs.weblogger_log_webloggerversion == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_DISABLED" | string %]</option>
+						<option value="1" [% IF prefs.weblogger_log_webloggerversion == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_LOG_OPTION_ENABLED" | string %]</option>
+					</select>
+				</td>
+			</tr></table>
+		[% END %]
+
+
+		[% WRAPPER settingGroup title="SETUP_GROUP_WEBLOGGER_UPDATE_SERVER" desc="" %]
+			<div class="prefDesc">[% "SETUP_GROUP_WEBLOGGER_UPDATE_SERVER_DESC" | string %]</div>
+		[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_STORAGE_URL" desc="" %]
+			<div class="prefDesc">[% "SETUP_WEBLOGGER_STORAGE_URL_DESC" | string %]</div><br>
+			<input type="text" class="stdedit" name="weblogger_storage_url" id="weblogger_storage_url" value="[% prefs.weblogger_storage_url %]" size=20>
+				[% IF (prefs.weblogger_ftp_username != "") or (prefs.weblogger_ftp_password != "") %]
+					<br>([% "SETUP_WEBLOGGER_STORAGE_URL_HIDDEN_PASSWORD_TEXT" | string %] "[% prefs.weblogger_ftp_username %]")
+				[% END %]
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_UPDATE_TIMEOUT" desc="SETUP_WEBLOGGER_UPDATE_TIMEOUT_DESC" %]
+			<select class="stdedit" name="weblogger_update_timeout" id="weblogger_update_timeout">
+				<option value="1" [% IF prefs.weblogger_update_timeout == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_1" | string %]</option>
+				<option value="2" [% IF prefs.weblogger_update_timeout == 2 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_2" | string %]</option>
+				<option value="5" [% IF prefs.weblogger_update_timeout == 5 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_5" | string %]</option>
+				<option value="10" [% IF prefs.weblogger_update_timeout == 10 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_10" | string %]</option>
+				<option value="15" [% IF prefs.weblogger_update_timeout == 15 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_15" | string %]</option>
+				<option value="30" [% IF prefs.weblogger_update_timeout == 30 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_30" | string %]</option>
+				<option value="60" [% IF prefs.weblogger_update_timeout == 60 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_UPDATE_TIMEOUT_OPTION_60" | string %]</option>
+			</select>
+			[% END %]
+
+
+		[% WRAPPER settingGroup title="SETUP_GROUP_WEBLOGGER_OUTPUT_FILE" desc="" %]
+			<div class="prefDesc">[% "SETUP_GROUP_WEBLOGGER_OUTPUT_FILE_DESC" | string %]</div>
+		[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_OUTPUT_PLAYING_TEMPLATE" desc="SETUP_WEBLOGGER_OUTPUT_PLAYING_TEMPLATE_DESC" %]
+				[% FOREACH template_name IN prefs.weblogger_output_playing_template_options.keys %]
+				<input type="radio" class="stdedit" name="weblogger_output_playing_template" id="weblogger_output_playing_template" value="[% template_name %]" size=20 [% IF prefs.weblogger_output_playing_template == template_name %]checked="checked"[% END %]>
+				<a href="/plugins/WebLogger/preview_playing_template.html?template_name=[% template_name | uri %]&player=[% playerURI %]" target="preview_playing_template">[% prefs.weblogger_output_playing_template_options.$template_name %]</a>
+				<br>
+				[% END %]
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_OUTPUT_FILENAME" desc="SETUP_WEBLOGGER_OUTPUT_FILENAME_DESC" %]
+			<input type="text" class="stdedit" name="weblogger_output_filename" id="weblogger_output_filename" value="[% prefs.weblogger_output_filename %]" size=20>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED" desc="SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED_DESC" %]
+			<select class="stdedit" name="weblogger_output_stopped_file_enabled" id="weblogger_output_stopped_file_enabled">
+				<option value="0" [% IF prefs.weblogger_output_stopped_file_enabled == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED_OPTION_DISABLED" | string %]</option>
+				<option value="1" [% IF prefs.weblogger_output_stopped_file_enabled == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_OUTPUT_STOPPED_FILE_ENABLED_OPTION_ENABLED" | string %]</option>
+			</select>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_OUTPUT_STOPPED_TEMPLATE" desc="SETUP_WEBLOGGER_OUTPUT_STOPPED_TEMPLATE_DESC" %]
+				[% FOREACH template_name IN prefs.weblogger_output_stopped_template_options.keys %]
+				<input type="radio" class="stdedit" name="weblogger_output_stopped_template" id="weblogger_output_stopped_template" value="[% template_name %]" size=20 [% IF prefs.weblogger_output_stopped_template == template_name %]checked="checked"[% END %]>
+				<a href="/plugins/WebLogger/preview_stopped_template.html?template_name=[% template_name | uri %]&player=[% playerURI %]" target="preview_stopped_template">[% prefs.weblogger_output_stopped_template_options.$template_name %]</a>
+				<br>
+				[% END %]
+			[% END %]
+
+
+		[% WRAPPER settingGroup title="SETUP_GROUP_WEBLOGGER_HTTP" desc="" %]
+			<div class="prefDesc">[% "SETUP_GROUP_WEBLOGGER_HTTP_DESC" | string %]</div>
+		[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_HTTP_METHOD" desc="" %]
+			<div class="prefDesc">[% "SETUP_WEBLOGGER_HTTP_METHOD_DESC" | string %]</div><br>
+			<select class="stdedit" name="weblogger_http_method" id="weblogger_http_method">
+				<option value="GET" [% IF prefs.weblogger_http_method == "GET" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_HTTP_METHOD_OPTION_GET" | string %]</option>
+				<option value="POST" [% IF prefs.weblogger_http_method == "POST" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_HTTP_METHOD_OPTION_POST" | string %]</option>
+				<option value="MULTIPARTPOST" [% IF prefs.weblogger_http_method == "MULTIPARTPOST" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_HTTP_METHOD_OPTION_MULTIPARTPOST" | string %]</option>
+			</select>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_HTTP_CHECKFOROK" desc="SETUP_WEBLOGGER_HTTP_CHECKFOROK_DESC" %]
+			<select class="stdedit" name="weblogger_http_checkforok" id="weblogger_http_checkforok">
+				<option value="0" [% IF prefs.weblogger_http_checkforok == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_HTTP_CHECKFOROK_OPTION_DISABLED" | string %]</option>
+				<option value="1" [% IF prefs.weblogger_http_checkforok == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_HTTP_CHECKFOROK_OPTION_ENABLED" | string %]</option>
+			</select>
+			[% END %]
+
+
+		[% WRAPPER settingGroup title="SETUP_GROUP_WEBLOGGER_FTP" desc="" %]
+			<div class="prefDesc">[% "SETUP_GROUP_WEBLOGGER_FTP_DESC" | string %]</div>
+		[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_FTP_PASSIVE" desc="SETUP_WEBLOGGER_FTP_PASSIVE_DESC" %]
+			<select class="stdedit" name="weblogger_ftp_passive"
+			id="weblogger_ftp_passive">
+				<option value="0" [% IF prefs.weblogger_ftp_passive == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_PASSIVE_OPTION_DISABLED" | string %]</option>
+				<option value="1" [% IF prefs.weblogger_ftp_passive == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_PASSIVE_OPTION_ENABLED" | string %]</option>
+			</select>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_FTP_KEEPALIVE" desc="" %]
+			<div class="prefDesc">[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_DESC" | string %]</div><br>
+			<select class="stdedit" name="weblogger_ftp_keepalive" id="weblogger_ftp_passive">
+				<option value="DISABLED" [% IF prefs.weblogger_ftp_keepalive == "DISABLED" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_DISABLED" | string %]</option>
+				<option value="JUSTOPEN" [% IF prefs.weblogger_ftp_keepalive == "JUSTOPEN" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_JUSTOPEN" | string %]</option>
+				<option value="UPLOADDUMMY" [% IF prefs.weblogger_ftp_keepalive == "UPLOADDUMMY" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_UPLOADDUMMY" | string %]</option>
+				<option value="DOWNLOADDUMMY" [% IF prefs.weblogger_ftp_keepalive == "DOWNLOADDUMMY" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_DOWNLOADDUMMY" | string %]</option>
+				<option value="DOWNLOADSONGINFO" [% IF prefs.weblogger_ftp_keepalive == "DOWNLOADSONGINFO" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_DOWNLOADSONGINFO" | string %]</option>
+				<option value="COMMANDS" [% IF prefs.weblogger_ftp_keepalive == "COMMANDS" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_COMMANDS" | string %]</option>
+				<option value="ANY" [% IF prefs.weblogger_ftp_keepalive == "ANY" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_FTP_KEEPALIVE_OPTION_ANY" | string %]</option>
+			</select>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_FTP_DUMMYFILE" desc="SETUP_WEBLOGGER_FTP_DUMMYFILE_DESC" %]
+			<input type="text" class="stdedit" name="weblogger_ftp_dummyfile" id="weblogger_ftp_dummyfile" value="[% prefs.weblogger_ftp_dummyfile %]" size=20>
+			[% END %]
+
+
+		[% WRAPPER settingGroup title="SETUP_GROUP_WEBLOGGER_ALBUMART" desc="" %]
+			<div class="prefDesc">[% "SETUP_GROUP_WEBLOGGER_ALBUMART_DESC" | string %]</div>
+		[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_ALBUMART_TYPE" desc="SETUP_WEBLOGGER_ALBUMART_TYPE_DESC" %]
+			<select class="stdedit" name="weblogger_albumart_type" id="weblogger_albumart_type">
+				<option value="THUMB" [% IF prefs.weblogger_albumart_type == "THUMB" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_ALBUMART_TYPE_OPTION_THUMB" | string %]</option>
+				<option value="COVER" [% IF prefs.weblogger_albumart_type == "COVER" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_ALBUMART_TYPE_OPTION_COVER" | string %]</option>
+			</select>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_ALBUMART_ALWAYS" desc="SETUP_WEBLOGGER_ALBUMART_ALWAYS_DESC" %]
+			<select class="stdedit" name="weblogger_albumart_always"
+			id="weblogger_albumart_always">
+				<option value="0" [% IF prefs.weblogger_albumart_always == 0 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_ALBUMART_ALWAYS_OPTION_DISABLED" | string %]</option>
+				<option value="1" [% IF prefs.weblogger_albumart_always == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_ALBUMART_ALWAYS_OPTION_ENABLED" | string %]</option>
+			</select>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_ALBUMART_FILENAME" desc="SETUP_WEBLOGGER_ALBUMART_FILENAME_DESC" %]
+			<input type="text" class="stdedit" name="weblogger_albumart_filename" id="weblogger_albumart_filename" value="[% prefs.weblogger_albumart_filename %]" size=20>
+			[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_ALBUMART_FILENAME_PREFIX" desc="SETUP_WEBLOGGER_ALBUMART_FILENAME_PREFIX_DESC" %]
+			<input type="text" class="stdedit" name="weblogger_albumart_filename_prefix" id="weblogger_albumart_filename_prefix" value="[% prefs.weblogger_albumart_filename_prefix %]" size=20>
+			[% END %]
+
+
+		[% WRAPPER settingGroup title="SETUP_GROUP_WEBLOGGER_STATUS" desc="" %]
+			<div class="prefDesc">[% "SETUP_GROUP_WEBLOGGER_STATUS_DESC" | string %]</div>
+		[% END %]
+
+			[% WRAPPER setting title="SETUP_WEBLOGGER_STATUS_DISPLAY" desc="SETUP_WEBLOGGER_STATUS_DISPLAY_DESC" %]
+			<select class="stdedit" name="weblogger_status_display" id="weblogger_status_display">
+				<option value="NONE" [% IF prefs.weblogger_status_display == "NONE" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_NONE" | string %]</option>
+				<option value="SUCCESS" [% IF prefs.weblogger_status_display == "SUCCESS" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_SUCCESS" | string %]</option>
+				<option value="FAILURE" [% IF prefs.weblogger_status_display == "FAILURE" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_FAILURE" | string %]</option>
+				<option value="ALL" [% IF prefs.weblogger_status_display == "ALL" %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_OPTION_ALL" | string %]</option>
+			</select>
+			[% END %]
+			[% WRAPPER setting title="SETUP_WEBLOGGER_STATUS_DISPLAY_TIME" desc="SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_DESC" %]
+			<select class="stdedit" name="weblogger_status_display_time" id="weblogger_status_display_time">
+				<option value="1" [% IF prefs.weblogger_status_display_time == 1 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_1" | string %]</option>
+				<option value="2" [% IF prefs.weblogger_status_display_time == 2 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_2" | string %]</option>
+				<option value="5" [% IF prefs.weblogger_status_display_time == 5 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_5" | string %]</option>
+				<option value="10" [% IF prefs.weblogger_status_display_time == 10 %]selected="selected"[% END %]>[% "SETUP_WEBLOGGER_STATUS_DISPLAY_TIME_OPTION_10" | string %]</option>
+			</select>
+			[% END %]
+
+		[% WRAPPER settingGroup title="SETUP_WEBLOGGER_CONFIG_FOOTNOTE" desc="" %]
+			<div class="prefDesc">[% "SETUP_WEBLOGGER_CONFIG_FOOTNOTE_DESC" | string %]</div>
+		[% END %]
+
+	[% END %]
+
+[% PROCESS settings/footer.html %]

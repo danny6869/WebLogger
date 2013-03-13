@@ -1,0 +1,8 @@
+<span title="[% IF SONG.PLAYERNAME %]Played on: [% SONG.PLAYERNAME %]
+[% END %][% IF SONG.WEBLOGGERVERSION %]Logged using: [% SONG.WEBLOGGERVERSION %]
+[% END %][% IF SONG.TIMESTAMP %]Last Updated: [% SONG.TIMESTAMP %][% END %]">
+<table>
+[% IF SONG.ALBUMART %]<tr><td valign='top' rowspan="16"><img src="[% SONG.ALBUMARTURL %]">&nbsp;&nbsp;</td></tr>
+[% END %]<tr><td valign='top'><b>Status:</b> </td><td valign='top'>Player Stopped</td></tr>
+</table>
+</span>

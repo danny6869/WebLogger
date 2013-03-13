@@ -1,0 +1,4 @@
+[% PERL %]
+use XML::Simple;
+print XMLout($stash->get('SONG'), RootName => 'SONG', NoAttr => 1, XMLDecl => '<?weblogger-song-data version="'.$stash->get('VERSION').'"?>');
+[% END %]

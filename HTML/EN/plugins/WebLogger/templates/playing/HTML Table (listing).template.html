@@ -1,0 +1,20 @@
+<table>
+[% IF SONG.ALBUMART %]<tr><td valign='top' rowspan="16"><img src="[% SONG.ALBUMARTURL %]">&nbsp;&nbsp;</td></tr>
+[% END %][% IF SONG.TITLE %]<tr><td valign='top'><b>Song:</b> </td><td valign='top'>[% SONG.TITLE %]</td></tr>
+[% END %][% IF SONG.ALBUM %]<tr><td valign='top'><b>Album:</b> </td><td valign='top'>[% SONG.ALBUM %]</td></tr>
+[% END %][% IF SONG.ARTIST %]<tr><td valign='top'><b>Artist:</b> </td><td valign='top'>[% SONG.ARTIST %]</td></tr>
+[% END %][% IF SONG.TIMESTAMP %]<tr><td valign='top'><b>Last Updated:</b> </td><td valign='top'>[% SONG.TIMESTAMP %]</td></tr>
+[% END %][% IF SONG.GENRE %]<tr><td valign='top'><b>Genre:</b> </td><td valign='top'>[% SONG.GENRE %]</td></tr>
+[% END %][% IF SONG.COMMENT %]<tr><td valign='top'><b>Tag Comment:</b> </td><td valign='top'>[% SONG.COMMENT %]</td></tr>
+[% END %][% IF SONG.TRACKNUM %]<tr><td valign='top'><b>Track Number:</b> </td><td valign='top'>[% SONG.TRACKNUM %]</td></tr>
+[% END %][% IF SONG.DURATION %]<tr><td valign='top'><b>Duration:</b> </td><td valign='top'>[% SONG.DURATION %]</td></tr>
+[% END %][% IF SONG.SECS %]<tr><td valign='top'><b>Duration (seconds):</b> </td><td valign='top'>[% SONG.SECS %]</td></tr>
+[% END %][% IF SONG.BITRATE %]<tr><td valign='top'><b>Bitrate:</b> </td><td valign='top'>[% SONG.BITRATE %]</td></tr>
+[% END %][% IF SONG.YEAR %]<tr><td valign='top'><b>Year:</b> </td><td valign='top'>[% SONG.YEAR %]</td></tr>
+[% END %][% IF SONG.TAGVERSION %]<tr><td valign='top'><b>Tag Version:</b> </td><td valign='top'>[% SONG.TAGVERSION %]</td></tr>
+[% END %][% IF SONG.COMPOSER %]<tr><td valign='top'><b>Composer:</b> </td><td valign='top'>[% SONG.COMPOSER %]</td></tr>
+[% END %][% IF SONG.CONDUCTOR %]<tr><td valign='top'><b>Conductor:</b> </td><td valign='top'>[% SONG.CONDUCTOR %]</td></tr>
+[% END %][% IF SONG.PLAYERNAME %]<tr><td valign='top'><b>Played on:</b> </td><td valign='top'>[% SONG.PLAYERNAME %]</td></tr>
+[% END %][% IF SONG.WEBLOGGERVERSION %]<tr><td valign='top'><b>Logged using:</b> </td><td valign='top'>[% SONG.WEBLOGGERVERSION %]</td></tr>
+[% END %]
+</table>

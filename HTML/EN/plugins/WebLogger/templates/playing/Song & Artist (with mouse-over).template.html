@@ -1,0 +1,27 @@
+<!-- Logged: [% IF SONG.TIMESTAMP %][% SONG.TIMESTAMP %][% END %] -->
+<span title="[% IF SONG.TITLE %][% SONG.TITLE %]
+[% END %][% IF SONG.ALBUM %] from the album [% SONG.ALBUM %]
+[% END %][% IF SONG.GENRE %]Genre: [% SONG.GENRE %]
+[% END %][% IF SONG.COMMENT %]Tag Comment: [% SONG.COMMENT %]
+[% END %][% IF SONG.TRACKNUM %]Track Number: [% SONG.TRACKNUM %]
+[% END %][% IF SONG.DURATION %]Duration: [% SONG.DURATION %]
+[% END %][% IF SONG.SECS %]Duration (seconds): [% SONG.SECS %]
+[% END %][% IF SONG.BITRATE %]Bitrate: [% SONG.BITRATE %]
+[% END %][% IF SONG.YEAR %]Year: [% SONG.YEAR %]
+[% END %][% IF SONG.TAGVERSION %]Tag Version: [% SONG.TAGVERSION %]
+[% END %][% IF SONG.COMPOSER %]Composer: [% SONG.COMPOSER %]
+[% END %][% IF SONG.CONDUCTOR %]Conductor: [% SONG.CONDUCTOR %]
+[% END %][% IF SONG.PLAYERNAME %]Played on: [% SONG.PLAYERNAME %]
+[% END %][% IF SONG.WEBLOGGERVERSION %]Logged using: [% SONG.WEBLOGGERVERSION %]
+[% END %]">
+<table>
+<tr><td valign="top">
+[% IF SONG.ALBUMART %]<img src="[% SONG.ALBUMARTURL %]">&nbsp;
+[% END %]</td><td valign="top">
+<table>
+[% IF SONG.TITLE %]<tr><td><b>[% SONG.TITLE %]</b></td></tr>
+[% END %][% IF SONG.ARTIST %]<tr><td><b>by: </b>[% SONG.ARTIST %]</td></tr>
+[% END %]</table>
+</td></tr>
+</table>
+</span>

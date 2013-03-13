@@ -1,0 +1,19 @@
+<p>
+[% IF SONG.TITLE %]<b>Song:</b> [% SONG.TITLE %]<br>
+[% END %][% IF SONG.ALBUM %]<b>Album:</b> [% SONG.ALBUM %]<br>
+[% END %][% IF SONG.ARTIST %]<b>Artist:</b> [% SONG.ARTIST %]<br>
+[% END %][% IF SONG.TIMESTAMP %]<b>Last Updated:</b> [% SONG.TIMESTAMP %]<br>
+[% END %][% IF SONG.GENRE %]<b>Genre:</b> [% SONG.GENRE %]<br>
+[% END %][% IF SONG.COMMENT %]<b>Tag Comment:</b> [% SONG.COMMENT %]<br>
+[% END %][% IF SONG.TRACKNUM %]<b>Track Number:</b> [% SONG.TRACKNUM %]<br>
+[% END %][% IF SONG.DURATION %]<b>Duration:</b> [% SONG.DURATION %]<br>
+[% END %][% IF SONG.SECS %]<b>Duration (seconds):</b> [% SONG.SECS %]<br>
+[% END %][% IF SONG.BITRATE %]<b>Bitrate:</b> [% SONG.BITRATE %]<br>
+[% END %][% IF SONG.YEAR %]<b>Year:</b> [% SONG.YEAR %]<br>
+[% END %][% IF SONG.TAGVERSION %]<b>Tag Version:</b> [% SONG.TAGVERSION %]<br>
+[% END %][% IF SONG.COMPOSER %]<b>Composer:</b> [% SONG.COMPOSER %]<br>
+[% END %][% IF SONG.CONDUCTOR %]<b>Conductor:</b> [% SONG.CONDUCTOR %]<br>
+[% END %][% IF SONG.PLAYERNAME %]<b>Played on:</b> [% SONG.PLAYERNAME %]<br>
+[% END %][% IF SONG.WEBLOGGERVERSION %]<b>Logged using:</b> [% SONG.WEBLOGGERVERSION %]<br>
+[% END %]</p>[% IF SONG.ALBUMART %]<img src="[% SONG.ALBUMARTURL %]"><br>
+[% END %]

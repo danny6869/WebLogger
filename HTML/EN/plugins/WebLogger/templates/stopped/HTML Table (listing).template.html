@@ -1,0 +1,8 @@
+<table>
+[% IF SONG.ALBUMART %]<tr><td valign='top' rowspan="16"><img src="[% SONG.ALBUMARTURL %]">&nbsp;&nbsp;</td></tr>
+[% END %]<tr><td valign='top'><b>Status:</b> </td><td valign='top'>Player Stopped</td></tr>
+[% IF SONG.TIMESTAMP %]<tr><td valign='top'><b>Last Updated:</b> </td><td valign='top'>[% SONG.TIMESTAMP %]</td></tr>
+[% END %][% IF SONG.PLAYERNAME %]<tr><td valign='top'><b>Played on:</b> </td><td valign='top'>[% SONG.PLAYERNAME %]</td></tr>
+[% END %][% IF SONG.WEBLOGGERVERSION %]<tr><td valign='top'><b>Logged using:</b> </td><td valign='top'>[% SONG.WEBLOGGERVERSION %]</td></tr>
+[% END %]
+</table>
